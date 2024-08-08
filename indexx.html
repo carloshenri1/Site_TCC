@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8"/>
+		<title>MiraiSystem</title>
+		<style type="text/css">
+		body
+		{
+			top:0px;
+			margin-top:0px;
+			background:linear-gradient(to left, rgb(10,10,10), rgb(40,40,40), rgb(10,10,10));
+			font-family:Verdana;
+			font-size:115%;
+			font-color:white;
+			text-align:center;
+		}
+
+		header
+		{
+		background:linear-gradient(to bottom, rgb(230,230,230), rgb(240,240,240), rgb(255,255,255));
+		position:fixed;
+		top:0px;
+		margin-top:0px;
+		margin-left:0%;
+		width:100%;
+		text-align:center;
+		font-size:1.6vw;
+		}
+		
+		#main ul
+		{
+			list-style:none;
+				
+		}
+		
+		#main ul li
+		{
+			display:inline;
+			
+			
+		}
+	
+		#main ul li a
+		{
+			text-decoration:none;
+			color:rgb(0,0,0);
+			
+		}
+  
+		#main ul li a:hover /*pseudoclasse-mouse em cima*/
+		{
+		background-color:rgba(150,150,150,0.5);
+		border-bottom:3px solid rgb(0,0,255);
+		border-radius:4px;
+		box-shadow:2px 2px 6px 10px rgba(150,150,150,0.5);
+		color:rgb(50,50,255);
+		font-weight:bold;
+		transition:0.5s;	
+		}
+
+			
+        #main .logoempresa
+		{
+			width:6%;
+			height:6%;
+		}
+		
+		#main .basilides
+		{
+			width:6%;
+			height:6%;
+			
+		}
+		   
+		#main .basilides a
+		{
+			border:none;
+			box-shadow:none;
+			text-decoration:none;
+		}
+		
+		#main .idioma
+		{
+			width:40px;
+			heigth:40px;
+			align:right;
+		}
+
+		form
+		{
+		background:radial-gradient(rgb(0,55,255), rgb(01,27,61));
+		width:36%;
+		margin-left:32%;
+		height:90%;
+		box-shadow:0px 0px 5px 5px rgba(230,230,230);
+		color:rgb(230,230,230);
+		}
+
+		.centralizado
+		{
+		text-align:right;	
+		}
+
+		.direita
+		{
+		right:100%;
+		}
+
+		#txtnome
+		{
+		width:100%;
+		
+		}
+		
+		#txttelefone
+		{
+		width:100%;
+		}
+		
+		#txtEmail
+		{
+		width:100%;
+		}
+
+		#txtcom
+		{
+		width:150%;
+		font-size:100%;
+		resize:none;
+		}
+
+		form table
+		{
+		text-align:center-right;
+		margin-left:8%;
+		height:300px;
+		width:300px;
+		}
+
+		h1
+		{
+		background-color:rgba(0,0,0,0.0);
+		color:rgb(50,50,255);
+		border-radius:3px;
+		}
+	
+        li 
+		{
+		text-align:center;
+		font-color:white;
+		 
+		}
+
+		h2
+		{
+		background-color:rgb(1,36,121);
+		color:white;
+		}
+
+		h3
+		{
+		color:white;
+		}
+
+		h4
+		{
+		color:rgb(255,255,255);
+		}
+		
+		h6
+		{
+			color:rgb(230,230,230);
+			font-size:90%;
+		
+		}
+
+		.volta
+		{
+		color:rgb(230,230,230);
+		margin-left:70%;
+		box-shadow:0px 2px 2px 2px 	rgb(255,255,255);
+		border-radius:70px;
+		}
+			.slider{
+		  width: 100%;
+		  margin-top: 100px;
+		  height: 500px;
+		 
+		  border-width:1px;
+		  overflow: hidden;
+		    border-radius:20px;
+		}
+
+		.slides{
+		  width: 515%;
+		  height: 100%;
+		  display: flex;
+	
+		}
+
+		.slides input{
+		  display: none;
+		   border-radius:20px;
+		}
+
+		.slide{
+		  width: 20%;
+		  transition: 2s;
+		
+		}
+	
+		.slide img{
+		  width: 40%;
+		  height: 100%;
+		  border-radius:100px;
+		}
+
+		.navigation-manual{
+		  position: absolute;
+		  width: 800px;
+		  margin-top: 20px;
+		  margin-left: 24.7%;
+		  display: flex;
+			visibility: hidden;
+		  justify-content: center;
+		}
+
+		.manual-btn{
+		  border: 1px solid #000;
+		  padding: 6px;
+		  border-radius: 10px;
+		  cursor: pointer;
+		  transition: 1s;
+		  visibility: hidden;
+		}
+
+		.manual-btn:not(:last-child){
+		  margin-right: 40px;
+		}
+
+		.manual-btn:hover{
+		  background: #000;
+		  
+		}
+
+		#radio1:checked ~ .first{
+		  margin-left: 0;
+		  width:25%;
+		}
+
+		#radio2:checked ~ .first{
+		  margin-left: -20%;
+		}
+
+		#radio3:checked ~ .first{
+		  margin-left: -40%;
+		}
+
+		#radio4:checked ~ .first{
+		  margin-left: -60%;
+		}
+			#radio5:checked ~ .first{
+		  margin-left: -80%;
+		}
+		#radio6:checked ~ .first{
+		  margin-left: -100%;
+		}
+
+
+		.navigation-auto{
+		  position: absolute;
+		  display: flex;
+		  width: 800px;
+		  justify-content: center;
+			visibility: hidden;
+		  margin-left: 24.7%;
+		  margin-top: 520px;
+		}
+
+		.navigation-auto div{
+		  border: 1px solid #000;
+		  padding: 6px;
+		  border-radius: 10px;
+		  transition: 1s;
+		}
+
+		.navigation-auto div:not(:last-child){
+		  margin-right: 40px;
+		}
+
+		#radio1:checked ~ .navigation-auto .auto-btn1{
+		  background: #000;
+		  
+		}
+
+		#radio2:checked ~ .navigation-auto .auto-btn2{
+		  background: #000;
+		}
+
+		#radio3:checked ~ .navigation-auto .auto-btn3{
+		  background: #000;
+		}
+
+		#radio4:checked ~ .navigation-auto .auto-btn4{
+		  background: #000;
+		  }
+		.quem 
+		{
+			width:80%;
+			border:2px solid rgb(0,53,196);
+			box-shadow:0px 0px 5px 5px rgb(230,230,230);
+			background:radial-gradient(rgb(0,55,255), rgb(01,27,61));
+			color:rgb(220,220,220);
+			margin-left:10%;
+		}
+
+		.quem h3
+		{
+			color:rgb(220,220,220);
+		}
+		
+		#faq
+		{
+			width:90%;
+			margin-left:5%;
+			text-align:center;
+		}
+		
+		span
+		{
+			border-radius:10px;
+			padding-left:3px;
+			padding-right:3px;
+		}
+		
+		p
+		{
+			font-size:0.3vw; /*criado para substituir um salto de linha comum*/
+		}
+		
+		.escondida
+		{
+			visibility: hidden;
+			height:0px;
+		}
+		
+		.exibida
+		{
+			visibility: visible;
+			height:auto;
+			color:white;
+		}
+		
+		.pergunta
+		{
+			background-color:rgb(230,230,230); /*background-color:#000000;*/
+			color:rgb(0,0,0); /*color:#ffffff;*/
+			cursor:pointer;
+			text-align:center		;
+			width:100%;
+			
+		}
+		
+	
+
+		</style>
+		</head>
+			<body onload="window.location.href='#Home'"> >
+				<header id="topo">
+					<div id="main">
+					 <ul>
+						<li><a href="https://basilides.com.br/"><img src="image-removebg-preview.png" class="basilides" /> </a></li>
+						<li>&nbsp;&nbsp;</li>
+						
+						<li><img src="LogoMirai.png" class="logoempresa"/></li>
+						<li>&nbsp;&nbsp;</li>
+						<li>&nbsp;&nbsp;</li>
+						
+					
+						
+							<li><a href="#Home">Home</a></li>
+							<li>&nbsp;&nbsp;</li>
+							<li><a href="#Empre">Company</a></li>
+							<li>&nbsp;&nbsp;</li>
+							<li><a href="#Porti">portfolio</a></li>
+							<li>&nbsp;&nbsp;</li>
+							<li><a href="#Locali">localization</a></li>
+							<li>&nbsp;&nbsp;</li>
+							<li><a href="#Conta">Contact</a></li>
+							<li>&nbsp;&nbsp;</li>
+							<li><a href="#FAQ">FAQ</a></li>
+						
+						<li>&nbsp;&nbsp;</li>
+						 <li>&nbsp;&nbsp;</li>
+							<li><a href="index.html"><img src="brasil.png" class="idioma" /></a></li>
+								
+					
+					  </ul> 
+					</div>
+
+				</header>
+						<br/><br/>
+				<section id="Home">
+				<br/><br/><br/><br/>
+					<br/><br/>
+				<hr/>
+				<h2>Home</h2>
+				<hr/>
+				<br/>
+
+				<div class="quem">
+				<h3>Who we are?</h3>
+					MiraiSystem is a company in the field of providing IT services, dedicated to the development and management of systems, having
+					as an objective, the computerization of the control of corporate routines in different market segments.<br/><br/>
+
+				Among the segments that MiraiSystem serves are:
+
+				<ul>
+					Clinical<br/>
+					Commercial<br/>
+					hospital<br/>
+					Industrial<br/>
+				    laboratory<br/>
+					services<br/>
+				</ul>
+
+				</div>		
+				</section>
+
+				<section id="Empre">
+				<br/><br/><br/><br/><br/>
+					<br/>
+				<hr/>
+				<h2>Company</h2>
+				<hr/>
+				<br/>
+				<div class="quem">
+					<h3>Story</h3>
+					MiraiSystem, founded in 2021, originated from the admiration of the 6 members
+					founders by Japanese technology and its advances, with Japan being an industrial power in the digital area. In this way, 
+					MiraiSystem always aims to seek the best and most evolved result in all its
+					projects for customer satisfaction, whatever it may be.
+
+					<br/></br>
+					<h3>Name origin</h3>
+					The company name originated from the addition of the words "future" in Japanese and "system" in English,
+					being the choice of the first word, a tribute to Japanese technology and its advances.
+				    
+				   
+					<br/></br>
+					
+					<h3>Mission</h3>
+					Our mission is to elevate the user experience with technology, optimizing and improving the working environment.
+						<br/></br>
+					<h3>Vision</h3>
+					We are a company that wants to be recognized by the
+					quality of our services, generating fame in the market
+					of systems development with the commitment to seek
+					the best for our customers, sponsors and partners. We are a company that wants to be recognized by
+					quality of our services, generating fame in the market
+					of systems development with the commitment to seek
+					the best for our customers, sponsors and partners.
+						<br/></br>
+				   <h3>Values</h3>
+						Commitment, Honesty, Empathy, Innovation, Overcoming, Responsibility, Humility, Progress.
+						<br/></br><br/></br>
+				 </div>  
+				   
+				   <br/><br/>
+
+				<div class="slider">
+				  <div class="slides">
+					<!--radio buttons start-->
+					<input type="radio" name="radio-btn" id="radio1">
+					<input type="radio" name="radio-btn" id="radio2">
+					<input type="radio" name="radio-btn" id="radio3">
+					<input type="radio" name="radio-btn" id="radio4">
+					<input type="radio" name="radio-btn" id="radio5">
+					<input type="radio" name="radio-btn" id="radio6">
+					<!--radio buttons end-->
+					<!--slide images start-->
+					<div class="slide first">
+					  <img src="Henrique Inglês.jpg" alt="">
+					</div>
+					<div class="slide">
+					  <img src="Bryan Inglês (1).jpg" alt="">
+					</div>
+					<div class="slide">
+					  <img src="Murillo Inglês.jpg" alt="">
+					</div>
+					<div class="slide">
+					  <img src="Samuel.jpg" alt="">
+					</div>
+					<div class="slide">
+					  <img src="Larissa Inglês.jpg" alt="">
+					</div>
+					<div class="slide">
+					  <img src="Carlos Ingês (2).jpg" alt="">
+					</div>
+					<!--slide images end-->
+					<!--automatic navigation start-->
+					<div class="navigation-auto">
+					  <div class="auto-btn1"></div>
+					  <div class="auto-btn2"></div>
+					  <div class="auto-btn3"></div>
+					  <div class="auto-btn4"></div>
+					  <div class="auto-btn5"></div>
+					  <div class="auto-btn6"></div>
+					  
+					</div>
+					<!--automatic navigation end-->
+				  </div>
+				  <!--manual navigation start-->
+				  <div class="navigation-manual">
+					<label for="radio1" class="manual-btn"></label>
+					<label for="radio2" class="manual-btn"></label>
+					<label for="radio3" class="manual-btn"></label>
+					<label for="radio4" class="manual-btn"></label>
+					<label for="radio5" class="manual-btn"></label>
+					<label for="radio6" class="manual-btn"></label>
+				  </div>
+				  <!--manual navigation end-->
+				</div>
+				<!--image slider end-->
+
+				<script type="text/javascript">
+				var counter = 1;
+				setInterval(function(){
+				  document.getElementById('radio' + counter).checked = true;
+				  counter++
+				  if(counter > 6){
+					counter = 1;
+				  }
+				}, 5000);
+				</script>
+			
+			
+			</section>
+
+				<section id="Porti">
+					<br/><br/><br/><br/>
+					<br/><br/>
+				<hr/>
+				<h2> portfolio </h2>
+				<hr/>
+				<br/><br/><br/>
+				<h3>Flyer Patas&Amor </h3>
+					<br/>
+				<img src="Flyer PetShop TCM.jpg"  width=550  />
+                    <br/>
+					<h3>Sistema CSharp Patas&Amor </h3>
+                	<img src="WhatsApp Image 2021-12-09 at 00.21.22 (2).jpeg"  width=550  />
+					<br/><br/>
+					<img src="WhatsApp Image 2021-12-09 at 00.21.23 (2).jpeg"  width=550  />
+					<br/><br/>
+					<img src="WhatsApp Image 2021-12-09 at 00.21.23 (4).jpeg"  width=550  />
+
+				<br/><br/><br/><br/>
+				</section>
+
+
+				<section id="Locali">
+					<br/><br/><br/><br/>
+					<br/><br/>
+				<hr/>
+				<h2> localization </h2>
+				<hr/>
+		            <br/><br/><br/><br/></br>
+				
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.3304703688377!2d-46.73065228538496!3d-23.520613565973118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cef8c1d371ec31%3A0x671c9325c275132e!2sETEC%20Professor%20Basilides%20de%20Godoy.!5e0!3m2!1spt-BR!2sbr!4v1637933926709!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+				
+					<br/><br/>
+
+				</section>
+
+
+
+				<section id="Conta">
+						<br/><br/><br/>
+					<br/><br/><br/>
+				<hr/>
+				<h2> Contact </h2>
+				<hr/>
+				<br/><br/><br/>
+				
+				<form id="formcontato" name="formcontato" method="post" action="mailto:miraisystem@gmail.com" enctype="text/plain" >
+					<table>
+					
+					<h6> <br/> To contact us, enter your data in the form below which will be sent to our team. - MiraiSystem Team</h6>
+						<tr>
+							<td class="direita">
+								<label for="txtnome">Full name:</label>
+							</td>
+							<td>
+								<input type="text" name="txtnome" id="txtnome" maxlength="30" placeholder=" enter your name"required autofocus />
+							</td>
+						</tr>
+						
+						<tr>
+							<td class="direita">
+								<label for="txttelefone">Telephone:</label>
+							</td>
+							<td>
+								<input type="text" name="txttelefone" id="txttelefone" maxlength="11" placeholder="(99) 9999-9999" />
+							</td>
+						</tr>
+						
+						<tr>
+							<td class="direita">
+								<label for="txtGmail">Email:</label>
+							</td>
+							<td>
+								<input type="Email" name="txtteEmail" id="txtEmail" maxlength="80" placeholder="name@domain" />
+							</td>
+						</tr>
+				
+						<tr>
+							<td class="direita">
+								<label for="txtcom">Leave your comment:</label>
+							</td>
+							<td>
+								<textarea id="txtcom" name="txtcom" cols="30" rows="4" placeholder="type here..."></textarea>
+							</td>
+						</tr>
+				
+						<tr>
+							<td colspan="2" class="centralizado">
+								<input type="submit" value="To send" />
+								<input type="reset" value="To clean" onClick="window.document.getElementById('txtnome').focus();"/>
+							</td>
+						</tr>
+					</table>
+				</form>
+				</section>
+				<script language="JavaScript">
+			
+				function Exibe_Resposta(x)
+				{
+					var resposta = document.getElementById(x);
+					//x="Resp1" ou x="Resp2" ou "Resp3"...
+					
+					/*abaixo é testada SE O VALOR ATUAL DA CLASSE DA RESPOSTA 
+					NÃO É "exibida". 
+					
+					SE NÃO FOR, a classe está com o valor "escondida" e, 
+					portanto, deverá ser substituida pelo valor "exibida" 
+					(para aparecer na tela). 
+					SENÃO, ou seja, a classe da resposta está com valor "exibida", 
+					deverá ser substituída pelo valor "escondida" (para desaparecer
+					da tela).
+					*/ 
+					
+					
+					if (resposta.className.indexOf("exibida") == -1) 
+						/*troca-se o valor da "class" de "escondida" para "exibida"*/ 
+						resposta.className = resposta.className.replace("escondida","exibida");
+					else
+						/*troca-se o valor da "class" de "exibida" para "escondida"*/ 
+						resposta.className = resposta.className.replace("exibida","escondida");
+				}
+				
+				</script>
+				<section id="FAQ">
+				<br/><br/>
+				<hr/>
+				<h2>FAQ</h2>
+				<hr/>
+					<br/><br/>
+							<span onClick="Exibe_Resposta('Resp1')" class="pergunta">How long will I have to wait after submitting the form?</span>
+				<article id="Resp1" class="escondida">
+					Our team works in communication with the customer at all times, and can be answered within 3 working days.
+				</article>
+			
+				<p></p> <!-- Só para dar um espaço de linha menor que o <br/> -->
+			
+				<span onClick="Exibe_Resposta('Resp2')" class="pergunta">What types of development languages ​​do you work with?</span>
+				<article id="Resp2" class="escondida">
+					We work mainly with C#, Java, JavaScript, C++, Python, among others.
+				</article>
+			
+				<p></p> <!-- Só para dar um espaço de linha menor que o <br/> -->
+			
+				<span onClick="Exibe_Resposta('Resp3')" class="pergunta">What types of operating systems do they support?</span>
+				<article id="Resp3" class="escondida">
+					We deal with Microsoft, Ubunto and Mac systems.
+				</article>
+			
+				<p></p> <!-- Só para dar um espaço de linha menor que o <br/> -->
+			
+				<span onClick="Exibe_Resposta('Resp4')" class="pergunta">How can I sign a contract with you?</span>
+				<article id="Resp4" class="escondida">
+					Enter your data in the form and send us your contract proposal via the message box.
+				</article>
+			
+				<p></p> <!-- Só para dar um espaço de linha menor que o <br/> -->
+			
+				<span onClick="Exibe_Resposta('Resp5')" class="pergunta">Do you work with communication materials?</span>
+				<article id="Resp5" class="escondida">
+				Yes. In addition to systems development, we also work with web programming and making banners and flyers.
+				</article>
+			
+				<p></p> <!-- Só para dar um espaço de linha menor que o <br/> -->
+			
+				<span onClick="Exibe_Resposta('Resp6')" class="pergunta">What is the minimum operating system to run programs?</span>
+				<article id="Resp6" class="escondida">
+					Our programs run from Windows 8 and can run on machines with 32bit processing.
+				</article>
+				</section>
+				<br/><br/><br/><br/><br/><br/>
+				
+				<a href="#Home" class="volta">Back to start</a>
+					<br/><br/><br/><br/>
+				</body>
+			</html>
